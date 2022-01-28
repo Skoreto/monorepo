@@ -1,0 +1,28 @@
+{
+  "root": "apps/proof-vis-e2e",
+  "sourceRoot": "apps/proof-vis-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/proof-vis-e2e/cypress.json",
+        "devServerTarget": "proof-vis:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "proof-vis:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/proof-vis-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["proof-vis"]
+}

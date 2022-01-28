@@ -2,6 +2,8 @@
   "version": 2,
   "projects": {
     "fit-spirit": "apps/fit-spirit",
-    "fit-spirit-e2e": "apps/fit-spirit-e2e"
+    "fit-spirit-e2e": "apps/fit-spirit-e2e",
+    "proof-vis": "apps/proof-vis",
+    "proof-vis-e2e": "apps/proof-vis-e2e"
   }
 }
