@@ -1,0 +1,97 @@
+{
+  "projectType": "application",
+  "root": "apps/statistical-generator-tester",
+  "sourceRoot": "apps/statistical-generator-tester/src",
+  "prefix": "sgt",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/statistical-generator-tester",
+        "index": "apps/statistical-generator-tester/src/index.html",
+        "main": "apps/statistical-generator-tester/src/main.ts",
+        "polyfills": "apps/statistical-generator-tester/src/polyfills.ts",
+        "tsConfig": "apps/statistical-generator-tester/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/statistical-generator-tester/src/favicon.ico",
+          "apps/statistical-generator-tester/src/assets"
+        ],
+        "styles": ["apps/statistical-generator-tester/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/statistical-generator-tester/src/environments/environment.ts",
+              "with": "apps/statistical-generator-tester/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "statistical-generator-tester:build:production"
+        },
+        "development": {
+          "browserTarget": "statistical-generator-tester:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 5000
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "statistical-generator-tester:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/statistical-generator-tester/src/**/*.ts",
+          "apps/statistical-generator-tester/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/statistical-generator-tester"],
+      "options": {
+        "jestConfig": "apps/statistical-generator-tester/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

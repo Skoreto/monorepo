@@ -1,0 +1,30 @@
+{
+  "root": "apps/statistical-generator-tester-e2e",
+  "sourceRoot": "apps/statistical-generator-tester-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/statistical-generator-tester-e2e/cypress.json",
+        "devServerTarget": "statistical-generator-tester:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "statistical-generator-tester:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/statistical-generator-tester-e2e/**/*.{js,ts}"
+        ]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["statistical-generator-tester"]
+}
