@@ -4,6 +4,7 @@
     "fit-spirit": "apps/fit-spirit",
     "fit-spirit-e2e": "apps/fit-spirit-e2e",
     "proof-vis": "apps/proof-vis",
-    "proof-vis-e2e": "apps/proof-vis-e2e"
+    "proof-vis-e2e": "apps/proof-vis-e2e",
+    "skoreto-ui": "libs/skoreto-ui"
   }
 }

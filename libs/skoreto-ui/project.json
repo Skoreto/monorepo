@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/skoreto-ui",
+  "sourceRoot": "libs/skoreto-ui/src",
+  "prefix": "stu",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/skoreto-ui"],
+      "options": {
+        "jestConfig": "libs/skoreto-ui/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/skoreto-ui/src/**/*.ts",
+          "libs/skoreto-ui/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
