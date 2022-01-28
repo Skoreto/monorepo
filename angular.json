@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "fit-spirit": "apps/fit-spirit",
+    "fit-spirit-e2e": "apps/fit-spirit-e2e"
+  }
+}
