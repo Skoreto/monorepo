@@ -1,13 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
   <head>
     <meta charset="utf-8" />
-    <title>StatisticalGeneratorTester</title>
+    <title>STMOD | Testovat generátory</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Testing of JavaScript libraries for generating random numbers"
+    />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/css/bootstrap-theme.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/css/simple-sidebar.css"
+      rel="stylesheet"
+      type="text/css"
+    />
   </head>
   <body>
     <sgt-root></sgt-root>
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/externalGenerators/random.min.js"></script>
+    <script src="assets/externalGenerators/chance.min.js"></script>
+    <script src="assets/externalGenerators/seedrandom.min.js"></script>
+    <script
+      type="text/javascript"
+      src="assets/js/main.js"
+      charset="utf-8"
+    ></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+      CommonHTML: {scale: 90}
+      });
+    </script>
+    <script
+      type="text/javascript"
+      async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"
+    ></script>
   </body>
 </html>

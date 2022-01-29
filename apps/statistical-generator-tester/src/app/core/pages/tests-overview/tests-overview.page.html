@@ -1,0 +1,198 @@
+<div id="wrapper">
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a href="#"> </a>
+      </li>
+      <li class="active">
+        <a href="index.html">Testovat generátory</a>
+      </li>
+      <li>
+        <a href="ownNumbers.html">Zadat vlastní čísla</a>
+      </li>
+    </ul>
+  </div>
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>Testovat generátory náhodných čísel</h1>
+          <br />
+          <div class="col-sm-7">
+            <h2>Předvolby generátoru</h2>
+            <br />
+
+            <div class="form-group">
+              <div class="radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="rGeneratorSelected"
+                    id="optradioDefaultJS"
+                    value="optDefaultJS"
+                    checked="checked"
+                  />
+                  JavaScript třída Math.random()
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="rGeneratorSelected"
+                    id="optradioSeedRandomJS"
+                    value="optSeedRandomJS"
+                  />
+                  Knihovna seedrandom.js - algoritmus založen na RC4
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="rGeneratorSelected"
+                    id="optradioMersenne"
+                    value="optMersenne"
+                  />
+                  Knihovna Random.js - založeno na Mersenne Twister generátoru
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="rGeneratorSelected"
+                    id="optradioChanceJS"
+                    value="optChanceJS"
+                  />
+                  Knihovna Chance.js
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inpNumbersGenerated">Počet čísel: </label>
+              <input
+                type="text"
+                id="inpNumbersGenerated"
+                value="1000"
+                size="4"
+              />
+              <label for="inpSeedNumber" id="lblInpSeedNumber"
+                >Seed (nelze):
+              </label>
+              <input
+                type="text"
+                id="inpSeedNumber"
+                value=""
+                size="2"
+                disabled
+              />
+            </div>
+
+            <div class="form-group">
+              <button
+                class="btn btn-info"
+                id="btnGenerate"
+                onclick="generateNumbers();"
+              >
+                Generovat
+              </button>
+            </div>
+
+            <div class="form-group">
+              <h2>Testové kritérium</h2>
+              <!-- <p>
+                $\alpha$ = 0.05
+                <br />
+                $u_{1-{\alpha / 2}}$ = $u_{0.975}$ = 1.959963985
+              </p> -->
+            </div>
+
+            <br />
+
+            <h2>Jednotlivé testy</h2>
+            <table class="table table-condensed">
+              <thead></thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <button
+                      class="btn btn-success"
+                      id="btnTestExtremal"
+                      onclick="testExtremal();"
+                      disabled
+                    >
+                      Testovat
+                    </button>
+                  </td>
+                  <td>Test bodů zvratu</td>
+                </tr>
+                <tr>
+                  <td>
+                    <button
+                      class="btn btn-success"
+                      id="btnTestDifference"
+                      onclick="testDifference();"
+                      disabled
+                    >
+                      Testovat
+                    </button>
+                  </td>
+                  <td>Test znamének diferencí</td>
+                </tr>
+                <tr>
+                  <td>
+                    <button
+                      class="btn btn-success"
+                      id="btnTestSpearman"
+                      onclick="testSpearman();"
+                      disabled
+                    >
+                      Testovat
+                    </button>
+                  </td>
+                  <td>Spearmanův pořadový koeficient korelace</td>
+                </tr>
+                <tr>
+                  <td>
+                    <button
+                      class="btn btn-success"
+                      id="btnTestSerial"
+                      onclick="testSerial();"
+                      disabled
+                    >
+                      Testovat
+                    </button>
+                  </td>
+                  <td>Seriální koeficient korelace / Cochranův test</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-sm-5">
+            <h2>Generovaná čísla</h2>
+            <br />
+            <div class="form-group">
+              <textarea
+                class="form-control"
+                id="generatedNumberArea"
+                readonly
+              ></textarea>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <br />
+            <div id="extremalBox"></div>
+
+            <div id="diffBox"></div>
+
+            <div id="spearmanBox"></div>
+
+            <div id="serialBox"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
