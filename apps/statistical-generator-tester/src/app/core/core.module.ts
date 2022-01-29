@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { TestsOverviewPageComponent } from './pages/tests-overview/tests-overview.page';
+import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
+import { AppComponent } from './components/app/app.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: TestsOverviewPageComponent,
-  },
-];
+const components = [AppComponent, SidebarComponent];
 
 @NgModule({
-  declarations: [TestsOverviewPageComponent],
-  imports: [RouterModule.forChild(routes)],
+  declarations: [...components],
+  imports: [SharedModule],
+  exports: [RouterModule],
   providers: [],
 })
 export class CoreModule {}

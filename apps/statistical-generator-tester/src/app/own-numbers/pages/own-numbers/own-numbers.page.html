@@ -1,0 +1,110 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>Zadat vlastní čísla pro testování</h1>
+      <br />
+      <div class="col-sm-7">
+        <div class="form-group">
+          <h2>Testové kritérium</h2>
+          <!-- <p>
+                $\alpha$ = 0.05
+                <br />
+                $u_{1-{\alpha / 2}}$ = $u_{0.975}$ = 1.959963985
+              </p> -->
+        </div>
+
+        <br />
+
+        <h2>Jednotlivé testy</h2>
+        <table class="table table-condensed">
+          <thead></thead>
+          <tbody>
+            <tr>
+              <td>
+                <button
+                  class="btn btn-success"
+                  id="btnTestExtremal"
+                  onclick="testExtremal();"
+                  disabled
+                >
+                  Testovat
+                </button>
+              </td>
+              <td>Test bodů zvratu</td>
+            </tr>
+            <tr>
+              <td>
+                <button
+                  class="btn btn-success"
+                  id="btnTestDifference"
+                  onclick="testDifference();"
+                  disabled
+                >
+                  Testovat
+                </button>
+              </td>
+              <td>Test znamének diferencí</td>
+            </tr>
+            <tr>
+              <td>
+                <button
+                  class="btn btn-success"
+                  id="btnTestSpearman"
+                  onclick="testSpearman();"
+                  disabled
+                >
+                  Testovat
+                </button>
+              </td>
+              <td>Spearmanův pořadový koeficient korelace</td>
+            </tr>
+            <tr>
+              <td>
+                <button
+                  class="btn btn-success"
+                  id="btnTestSerial"
+                  onclick="testSerial();"
+                  disabled
+                >
+                  Testovat
+                </button>
+              </td>
+              <td>Seriální koeficient korelace / Cochranův test</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-sm-5">
+        <h2>Řada čísel</h2>
+        <div class="form-group">
+          <textarea class="form-control" id="ownNumbersArea"></textarea>
+        </div>
+
+        <div class="form-group">
+          <p class="text-muted">Zadávejte čísla na samostatné řádky.</p>
+        </div>
+
+        <div class="form-group">
+          <button
+            class="btn btn-info"
+            id="btnGetOwnNumbers"
+            onclick="getOwnNumbers();"
+            disabled
+          >
+            Načíst čísla
+          </button>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <br />
+        <div id="extremalBox"></div>
+
+        <div id="diffBox"></div>
+
+        <div id="spearmanBox"></div>
+
+        <div id="serialBox"></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,12 +1,19 @@
 ﻿import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'callback', redirectTo: '/home' },
+  { path: '', redirectTo: '/generators', pathMatch: 'full' },
+  { path: 'callback', redirectTo: '/generators' },
   {
-    path: 'core',
-    loadChildren: () => import('./core/core.module').then((m) => m.CoreModule),
-    // canActivateChild: [AuthGuard],
+    path: 'generators',
+    loadChildren: () =>
+      import('./generators/generators.module').then((m) => m.GeneratorsModule),
   },
-  { path: '**', redirectTo: '/home' },
+  {
+    path: 'own-numbers',
+    loadChildren: () =>
+      import('./own-numbers/own-numbers.module').then(
+        (m) => m.OwnNumbersModule
+      ),
+  },
+  { path: '**', redirectTo: '/generators' },
 ];

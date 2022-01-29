@@ -8,7 +8,7 @@
     "start": "nx serve",
     "start:fit-spirit": "nx run fit-spirit:serve --o --port 5000",
     "start:proof-vis": "nx run proof-vis:serve --o --port 5001",
-    "start:statistical-generator-tester": "nx run statistical-generator-tester:serve --o --port 5002",
+    "start:sgt": "nx run statistical-generator-tester:serve --o --port 5002",
     "build": "nx build",
     "test": "nx test"
   },
